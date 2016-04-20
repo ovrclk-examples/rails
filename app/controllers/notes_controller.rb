@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    expires_in 1.minute, public: true
+    expires_in 5.seconds, public: true
     @notes = Note.all
   end
 
@@ -12,7 +12,7 @@ class NotesController < ApplicationController
   # GET /notes/1.json
   def show
     fresh_when @note, public: true
-    expires_in 1.minute, public: true
+    expires_in 1.second, public: true
   end
 
   # GET /notes/new
